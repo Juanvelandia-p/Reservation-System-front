@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios"; // Importamos axios
 import "./styles/ReservaPage.css"; // Importamos los estilos
+import { enviarReserva } from "./hooks/labhooks.tsx";
 
 function ReservaPage() {
   const navigate = useNavigate(); // Hook para la navegación
@@ -36,7 +37,7 @@ function ReservaPage() {
 
     try {
       // Enviar la reserva al backend usando axios
-      const response = enviarResrva(reserva)
+      const response = enviarReserva(reserva)
 
       if (response.status === 200) {
         // Si la respuesta es exitosa, mostramos una alerta y redirigimos
