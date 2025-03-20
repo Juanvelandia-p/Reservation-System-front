@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios"; // Importamos axios
 import "./styles/ReservaPage.css"; // Importamos los estilos
 import { enviarReserva } from "./hooks/labhooks.tsx";
 
