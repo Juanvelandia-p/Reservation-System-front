@@ -10,13 +10,17 @@ import { eliminarReserva } from "./hooks/useDeleteReservation.tsx";
 function ReservasListPage() {
   const navigate = useNavigate();
   const { reservations, loading, error, fetchReservations } = useFetchReservations();
-
   const handleDelete = async (id) => {
-    await eliminarReserva(id);
-    toast.success("Reserva eliminada correctamente");
-    setTimeout(() => {
-        window.location.reload();
-    }, 1500); // Espera 1.5 segundos para que el usuario vea el mensaje
+    try {
+        await eliminarReserva(id);
+        toast.success("Reserva eliminada correctamente");
+        setTimeout(() => {
+            window.location.reload();
+        }, 1500); // Espera 1.5 segundos para que el usuario vea el mensaje
+    } catch (error) {
+        toast.error("Error al eliminar la reserva");
+        console.error("Error al eliminar la reserva:", error);
+    }
 };
 
   return (
