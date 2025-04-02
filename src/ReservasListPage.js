@@ -9,7 +9,7 @@ import { eliminarReserva } from "./hooks/useDeleteReservation.tsx";
 
 function ReservasListPage() {
   const navigate = useNavigate();
-  const { reservations, loading, error, fetchReservations } = useFetchReservations();
+  const { reservations, loading, error } = useFetchReservations();
   const handleDelete = async (id) => {
     try {
         await eliminarReserva(id);
