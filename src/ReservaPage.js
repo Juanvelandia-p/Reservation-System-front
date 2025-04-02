@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./styles/ReservaPage.css"; // Importamos los estilos
 import { enviarReserva } from "./hooks/labhooks.tsx";
 
 function ReservaPage() {
-  const navigate = useNavigate(); // Hook para la navegación
+  const navigate = useNavigate();
   const [reserva, setReserva] = useState({
     lab: "",
     reserveDate: "",
@@ -23,7 +25,14 @@ function ReservaPage() {
     "17:30-19:00",
   ];
 
-  const salones = ["Ingeniería de Software", "Plataformas computacionales", "Redes de computadores","Multimedia y Móviles","Fundamentos de Computación","Desarrollo de Videojuegos", ];
+  const salones = [
+    "Ingeniería de Software",
+    "Plataformas computacionales",
+    "Redes de computadores",
+    "Multimedia y Móviles",
+    "Fundamentos de Computación",
+    "Desarrollo de Videojuegos",
+  ];
 
   const handleChange = (e) => {
     setReserva({ ...reserva, [e.target.name]: e.target.value });
@@ -33,15 +42,23 @@ function ReservaPage() {
     e.preventDefault();
     try {
       const response = await enviarReserva(reserva);
-
       if (response.status === 200) {
-        alert("Reserva realizada con éxito");
+        toast.success("Reserva realizada con éxito", {
+          position: "top-center",
+          autoClose: 3000,
+        });
       } else {
-        alert("Hubo un problema al realizar la reserva.");
+        toast.error("Hubo un problema al realizar la reserva.", {
+          position: "top-center",
+          autoClose: 3000,
+        });
       }
     } catch (error) {
       console.error("Error al realizar la reserva:", error);
-      alert("Error de conexión. Intenta nuevamente.");
+      toast.error("Error de conexión. Intenta nuevamente.", {
+        position: "top-center",
+        autoClose: 3000,
+      });
     }
   };
 
@@ -64,11 +81,22 @@ function ReservaPage() {
 
         {/* Selección de Fecha */}
         <label>Selecciona una fecha:</label>
-        <input type="date" name="reserveDate" value={reserva.reserveDate} onChange={handleChange} required />
+        <input
+          type="date"
+          name="reserveDate"
+          value={reserva.reserveDate}
+          onChange={handleChange}
+          required
+        />
 
-        {/* Selección de Horario (sin espacios en reserveTime) */}
+        {/* Selección de Horario */}
         <label>Selecciona un horario:</label>
-        <select name="reserveTime" value={reserva.reserveTime} onChange={handleChange} required>
+        <select
+          name="reserveTime"
+          value={reserva.reserveTime}
+          onChange={handleChange}
+          required
+        >
           <option value="">Seleccione un horario</option>
           {horarios.map((hora, index) => (
             <option key={index} value={hora}>
@@ -79,16 +107,27 @@ function ReservaPage() {
 
         {/* Campo de Nombre Completo */}
         <label>Nombre Completo:</label>
-        <input type="text" name="userName" value={reserva.userName} onChange={handleChange} required />
+        <input
+          type="text"
+          name="userName"
+          value={reserva.userName}
+          onChange={handleChange}
+          required
+        />
 
         {/* Botón de Enviar */}
-        <button type="submit" className="submit-button">Reservar</button>
+        <button type="submit" className="submit-button">
+          Reservar
+        </button>
       </form>
 
       {/* Botón para volver a la página principal */}
       <button className="back-button" onClick={() => navigate("/")}>
         Volver al inicio
       </button>
+
+      {/* Contenedor de Toasts */}
+      <ToastContainer />
     </div>
   );
 }

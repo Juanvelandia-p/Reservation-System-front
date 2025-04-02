@@ -1,135 +1,93 @@
 html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
+/* Contenedor principal con fondo */
 .reserva-container {
-    width: 100vw; /* Ocupa todo el ancho de la pantalla */
-    height: 100vh; /* Ocupa todo el alto de la pantalla */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-image: url("../assets/Fondo2.png"); /* Imagen de fondo */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../assets/Fondo2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
 }
 
+/* Titulares y párrafos */
+h2, p {
+  color: white;
+  text-align: center;
+}
+
+/* Estilos del formulario */
+.reserva-form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Etiquetas */
+label {
+  display: block;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  text-align: left;
+  color: #333;
+}
+
+/* Inputs y selects */
+select, input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Botón de enviar ("Reservar") */
+.submit-button {
+  background-color: #00a850;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.submit-button:hover {
+  background-color: #008c42;
+}
+
+/* Botón de volver ("Volver al inicio") */
 .back-button {
-    background-color: #00a850;
-    color: white;
-    font-weight: bold;
-    font-size: 25px;
-    text-transform: uppercase;
-    border: none;
-    border-radius: 50px;
-    padding: 30px 55px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  
-  .back-button:hover {
-    background-color: #008c42;
-  }
-
-  .back-button {
-    margin-top: 500px; /* Ajusta este valor según necesites */
+  background-color: #ff4d4d;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 20px;
 }
 
-.reserva-container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-image: url("../assets/Fondo2.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 20px;
-  }
-  
-  h2, p {
-    color: white;
-    text-align: center;
-  }
-  
-  .reserva-form {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    width: 100%;
-  }
-  
-  label {
-    display: block;
-    font-weight: bold;
-    margin: 10px 0 5px;
-    text-align: left;
-    color: #333;
-  }
-  
-  select, input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  .submit-button {
-    background-color: #00a850;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    border: none;
-    border-radius: 50px;
-    padding: 12px 20px;
-    cursor: pointer;
-    transition: 0.3s;
-    width: 100%;
-  }
-  
-  .submit-button:hover {
-    background-color: #008c42;
-  }
-  
-  .back-button {
-    background-color: #ff4d4d;
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
-    border: none;
-    border-radius: 50px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-top: 20px;
-  }
-  
-  .back-button:hover {
-    background-color: #cc0000;
-  }
-  
-
-
-
-  
+.back-button:hover {
+  background-color: #cc0000;
+}
