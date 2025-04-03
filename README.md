@@ -27,7 +27,7 @@ Instalación
 
 Clona este repositorio:
 
-git clone [[https://github.com/tu-usuario/proyecto-reservas.git](https://github.com/Meperd0wnas/ParcialTercio2Front)](https://github.com/Juanvelandia-p/Reservation-System-front)
+git clone https://github.com/Juanvelandia-p/Reservation-System-front
 
 Accede al directorio del proyecto:
 
