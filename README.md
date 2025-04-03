@@ -1,11 +1,11 @@
 
-Proyecto de Reservas
+## Proyecto de Reservas
 
-Descripción
+## Descripción
 
 Este es un sistema de reservas que permite a los usuarios seleccionar un laboratorio, una fecha y un horario para realizar una reserva. El sistema incluye una interfaz gráfica intuitiva, una lista de reservas con opción de eliminación y comunicación con el backend mediante Axios.
 
-Tecnologías utilizadas
+## Tecnologías utilizadas
 
 React.js
 
@@ -17,7 +17,7 @@ Axios
 
 CSS
 
-Instalación y ejecución
+## Instalación y ejecución
 
 Requisitos previos
 
@@ -45,7 +45,7 @@ npm start
 
 El proyecto estará disponible en http://localhost:3000/.
 
-Estructura del Proyecto
+## Estructura del Proyecto
 
 📂 proyecto-reservas
 ├── 📂 src
@@ -66,7 +66,7 @@ Estructura del Proyecto
 │   ├── App.js
 └── package.json
 
-Funcionalidades
+## Funcionalidades
 
 1. Página Principal (App.js)
 
@@ -98,7 +98,7 @@ Permite eliminar reservas con un botón de eliminación.
 
 Maneja la comunicación con el backend usando useFetchReservations y useDeleteReservation.
 
-API del Backend
+## API del Backend
 
 Enviar una reserva
 
@@ -128,9 +128,7 @@ Se usa React Toastify para mostrar mensajes de éxito y error.
 
 Se valida que los campos no estén vacíos antes de enviar una reserva.
 
-Se actualiza la lista de reservas automáticamente tras eliminar una.
-
-Contribución
+Se actualiza la lista de reservas automáticamente tras eliminar una Contribución
 
 Realiza un fork del repositorio.
 
